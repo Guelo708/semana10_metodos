@@ -75,8 +75,30 @@ public class Main {
 
     public static void ejercicio1() {
         System.out.println("Ejercicio 1: Calculadora de descuentos en Tienda");
-        double productos = 0;
+    double descuentoTotalCompra = 0.0;
+    double precioUnitario = 10000.0;
+    int cantidadProductos = 500;
+
+    // Descuento por volumen (orden corregido)
+    if (cantidadProductos > 20){
+        descuentoTotalCompra = 0.20;
+    } else if (cantidadProductos > 10){
+        descuentoTotalCompra = 0.15;
+    } else if (cantidadProductos > 5){
+        descuentoTotalCompra = 0.10;
     }
+
+    double totalCompra = (precioUnitario * cantidadProductos) * (1 - descuentoTotalCompra);
+
+    // Descuento adicional por monto
+    if (totalCompra > 100000){
+        totalCompra = totalCompra * (1 - 0.05);
+    }
+
+    System.out.println("Precio final a pagar: $" + totalCompra);
+}
+
+
 
     public static void ejercicio2() {
         System.out.println("Ejercicio 2");
