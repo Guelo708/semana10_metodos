@@ -138,7 +138,24 @@ public class Main {
     }
 
     public static void ejercicio4() {
-        System.out.println("Ejercicio 4");
+
+        double tiempoBus = 20.0;
+        double tiempoMetro = 15.0;
+        double tiempoCaminata = 10.0;
+
+        boolean traficoPesado = true;
+        boolean lluvia = false;
+
+        if (traficoPesado){
+            tiempoBus *= 1.5;
+        }
+        if (lluvia){
+            tiempoCaminata *= 2;
+        }
+
+        double tiempoViaje = tiempoBus + tiempoMetro + tiempoCaminata;
+        
+        System.out.println("El tiempo total de viaje fue: " + tiempoViaje +" Minutos");
     }
 
     public static void ejercicio5() {
