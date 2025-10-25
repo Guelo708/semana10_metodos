@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+         Scanner scanner = new Scanner(System.in);
         while (true) {
             menu();
             int opcion = scanner.nextInt();
@@ -52,7 +52,7 @@ public class Main {
 
         }
         System.out.println("Fin del programa");
-        scanner.close();
+        //scanner.close();
     }
 
     public static void menu() {
@@ -101,6 +101,35 @@ public class Main {
 
 
     public static void ejercicio2() {
+
+    
+
+   
+    int edad = 25;
+    double ingresos = 2500000;
+    double gastos = 900000;
+
+    boolean ingresosValidos = ingresos >= 2000000;
+    boolean edadValida = edad >= 18 && edad <= 65;
+    boolean gastosValidos = gastos <= ingresos * 0.7;
+
+
+            if (ingresosValidos && edadValida && gastosValidos) {
+            double montoMaximoCredito = ingresos * 5;
+            System.out.println("¡Crédito aprobado!");
+            System.out.println("Monto máximo del crédito: $" + montoMaximoCredito);
+        } else {
+            System.out.println("Crédito no aprobado. No cumple con todos los criterios.");
+        }
+
+
+    
+
+
+
+ 
+
+
         System.out.println("Ejercicio 2");
     }
 
