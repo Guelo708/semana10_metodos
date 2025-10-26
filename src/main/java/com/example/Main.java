@@ -171,8 +171,57 @@ public class Main {
     }
 
     public static void ejercicio8() {
-        System.out.println("Ejercicio 8");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("🏥 Ejercicio 8: Sistema de Triaje Hospitalario");
+        System.out.println("Área de Aplicación: Salud/Medicina\n");
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Paciente " + i + ":");
+
+            System.out.print("Temperatura corporal (°C): ");
+            double temperatura = scanner.nextDouble();
+
+            System.out.print("Presión sistólica (mmHg): ");
+            int sistolica = scanner.nextInt();
+
+            System.out.print("Presión diastólica (mmHg): ");
+            int diastolica = scanner.nextInt();
+
+            System.out.print("Nivel de dolor (1 a 10): ");
+            int dolor = scanner.nextInt();
+
+            boolean urgente = false;
+
+            if (temperatura > 38.5) {
+                urgente = true;
+            }
+            if (sistolica > 140 || diastolica > 90) {
+                urgente = true;
+            }
+            if (dolor >= 8 && dolor <= 10) {
+                urgente = true;
+            }
+
+            if (urgente) {
+                System.out.println("Clasificación: URGENTE");
+            } else if (dolor >= 5 || temperatura > 37.5 || sistolica > 130) {
+                System.out.println(" Clasificación: PRIORITARIO");
+            } else {
+                System.out.println("Clasificación: NORMAL");
+            }
+
+            System.out.println(); // Espacio entre pacientes
+        }
     }
+
+
+
+
+
+
+
 
     public static void ejercicio9() {
 
@@ -197,24 +246,19 @@ public class Main {
             double promedio = (parciales * 0.3) + (proyecto * 0.4) + (participacion * 0.3);
 
             // Mostrar resultado
-            System.out.printf("📊 Promedio final: %.2f\n", promedio);
+            System.out.printf(" Promedio final: %.2f\n", promedio);
 
             if (promedio >= 4.0) {
-                System.out.println("✅ Estado: Aprobado");
+                System.out.println(" Estado: Aprobado");
             } else if (promedio >= 3.5) {
-                System.out.println("📝 Estado: Supletorio");
+                System.out.println(" Estado: Supletorio");
             } else {
-                System.out.println("❌ Estado: Reprobado");
+                System.out.println(" Estado: Reprobado");
             }
 
             System.out.println(); // Espacio entre estudiantes
         }
     }
-
-    
-
-    
-    
 
 
     public static void ejercicio10() {
