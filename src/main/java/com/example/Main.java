@@ -144,7 +144,7 @@ public class Main {
         double tiempoCaminata = 10.0;
 
         boolean traficoPesado = true;
-        boolean lluvia = false;
+        boolean lluvia = true;
 
         if (traficoPesado){
             tiempoBus *= 1.5;
@@ -175,11 +175,45 @@ public class Main {
     }
 
     public static void ejercicio9() {
-        System.out.println("Ejercicio 9");
-    }
+
+
+
+    
+    
+}
 
     public static void ejercicio10() {
-        System.out.println("Ejercicio 10");
-    }
+        System.out.println("Ejercicio 10: Simulación de riego automático para una granja");
 
+    java.util.Random random = new java.util.Random();
+
+    for (int dia = 1; dia <= 7; dia++) {
+        System.out.println("\n Día " + dia + ":");
+
+        // Simular condiciones climáticas
+        boolean llovio = random.nextBoolean(); // true o false
+        int humedad = random.nextInt(101);     // 0 a 100%
+        int temperatura = 15 + random.nextInt(21); // 15°C a 35°C
+
+        System.out.println("Lluvia en últimas 24h: " + (llovio ? "Sí" : "No"));
+        System.out.println("Humedad del suelo: " + humedad + "%");
+        System.out.println("Temperatura: " + temperatura + "°C");
+
+        // Lógica de activación del riego
+        if (llovio) {
+            System.out.println(" No se activa el riego por lluvia reciente.");
+        } else if (humedad < 30) {
+            System.out.println(" Riego activado por 60 minutos (humedad < 30%).");
+        } else if (temperatura > 25 && humedad < 50) {
+            System.out.println("Riego activado por 30 minutos (alta temperatura y humedad moderada).");
+        } else {
+            System.out.println(" No se requiere riego hoy.");
+        }
+    }
 }
+
+
+        
+}
+
+
