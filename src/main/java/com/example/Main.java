@@ -167,8 +167,43 @@ public class Main {
     }
 
     public static void ejercicio7() {
-        System.out.println("Ejercicio 7");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ejercicio 7: Monitor de Rutina de Ejercicios");
+        System.out.println("Área de Aplicación: Salud/Deporte\n");
+
+        // Calorías quemadas por minuto
+        final int CALORIAS_CARDIO = 10;
+        final int CALORIAS_PESAS = 8;
+        final int CALORIAS_YOGA = 5;
+
+        // Solicitar duración de cada ejercicio
+        System.out.print("Minutos de cardio realizados: ");
+        int minutosCardio = scanner.nextInt();
+
+        System.out.print("Minutos de pesas realizados: ");
+        int minutosPesas = scanner.nextInt();
+
+        System.out.print("Minutos de yoga realizados: ");
+        int minutosYoga = scanner.nextInt();
+
+        // Calcular calorías quemadas
+        int caloriasCardio = minutosCardio * CALORIAS_CARDIO;
+        int caloriasPesas = minutosPesas * CALORIAS_PESAS;
+        int caloriasYoga = minutosYoga * CALORIAS_YOGA;
+
+        int caloriasTotales = caloriasCardio + caloriasPesas + caloriasYoga;
+
+        // Calcular puntos
+        int puntos = (caloriasTotales > 500) ? 50 : 0;
+
+        // Mostrar resultados
+        System.out.println("\n Calorías totales quemadas: " + caloriasTotales + " cal");
+        System.out.println("Puntos ganados: " + puntos);
+      
     }
+
 
     public static void ejercicio8() {
 
