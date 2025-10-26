@@ -176,11 +176,46 @@ public class Main {
 
     public static void ejercicio9() {
 
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("🎓 Ejercicio 9: Calculadora de Notas y Promedio Estudiantil");
+        System.out.println("Área de Aplicación: Educación\n");
+
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(" Estudiante " + i + ":");
+
+            System.out.print("Ingrese nota de parciales (0.0 - 5.0): ");
+            double parciales = scanner.nextDouble();
+
+            System.out.print("Ingrese nota del proyecto final (0.0 - 5.0): ");
+            double proyecto = scanner.nextDouble();
+
+            System.out.print("Ingrese nota de participación (0.0 - 5.0): ");
+            double participacion = scanner.nextDouble();
+
+            // Calcular promedio ponderado
+            double promedio = (parciales * 0.3) + (proyecto * 0.4) + (participacion * 0.3);
+
+            // Mostrar resultado
+            System.out.printf("📊 Promedio final: %.2f\n", promedio);
+
+            if (promedio >= 4.0) {
+                System.out.println("✅ Estado: Aprobado");
+            } else if (promedio >= 3.5) {
+                System.out.println("📝 Estado: Supletorio");
+            } else {
+                System.out.println("❌ Estado: Reprobado");
+            }
+
+            System.out.println(); // Espacio entre estudiantes
+        }
+    }
+
+    
 
     
     
-}
+
 
     public static void ejercicio10() {
         System.out.println("Ejercicio 10: Simulación de riego automático para una granja");
