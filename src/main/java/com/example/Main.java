@@ -135,8 +135,67 @@ public class Main {
     }
 
     public static void ejercicio3() {
-        System.out.println("Ejercicio 3");
+
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("Ejercicio 3: Control de Inventario de Mercado");
+        System.out.println("Área de Aplicación: Comercio/Logística\n");
+
+        // Inventario inicial
+        int manzanas = 30;
+        int bananas = 25;
+        int mangos = 20;
+
+        // Simular 7 días
+        for (int dia = 1; dia <= 7; dia++) {
+            System.out.println(" Día " + dia + ":");
+
+            // Simular ventas aleatorias entre 5 y 15 unidades
+            int ventaManzanas = 5 + random.nextInt(11);
+            int ventaBananas = 5 + random.nextInt(11);
+            int ventaMangos = 5 + random.nextInt(11);
+
+            // Actualizar inventario
+            manzanas -= ventaManzanas;
+            bananas -= ventaBananas;
+            mangos -= ventaMangos;
+
+            System.out.println("Manzanas vendidas: " + ventaManzanas);
+            System.out.println(" Bananas vendidas: " + ventaBananas);
+            System.out.println(" Mangos vendidos: " + ventaMangos);
+
+            // Reposición automática si baja de 10 unidades
+            if (manzanas < 10) {
+                System.out.println(" Reposición de manzanas: +50 unidades");
+                manzanas += 50;
+            }
+            if (bananas < 10) {
+                System.out.println("Reposición de bananas: +50 unidades");
+                bananas += 50;
+            }
+            if (mangos < 10) {
+                System.out.println("Reposición de mangos: +50 unidades");
+                mangos += 50;
+            }
+
+            // Mostrar inventario actualizado
+            System.out.println("Inventario actual:");
+            System.out.println(" Manzanas: " + manzanas + " unidades");
+            System.out.println(" Bananas: " + bananas + " unidades");
+            System.out.println(" Mangos: " + mangos + " unidades\n");
+        }
+
+        // Inventario final
+        System.out.println("Inventario final después de 7 días:");
+        System.out.println(" Manzanas: " + manzanas + " unidades");
+        System.out.println(" Bananas: " + bananas + " unidades");
+        System.out.println("Mangos: " + mangos + " unidades");
+
+        
     }
+
 
     public static void ejercicio4() {
 
