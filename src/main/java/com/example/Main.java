@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -159,8 +160,39 @@ public class Main {
     }
 
     public static void ejercicio5() {
-        System.out.println("Ejercicio 5");
+
+    
+        Random random = new Random();
+
+        System.out.println(" Ejercicio 5: Sistema de Gestión de Vuelos");
+        System.out.println("Área de Aplicación: Transporte/Aviación\n");
+
+        boolean malClima = random.nextBoolean(); // Simula si hay mal clima
+        System.out.println("Condición climática: " + (malClima ? "Mal clima" : "Clima normal"));
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("\n Vuelo " + i + ":");
+
+            boolean cancelado = random.nextInt(10) == 0; // 10% probabilidad de cancelación
+            int retrasoBase = random.nextInt(31); // 0 a 30 minutos de retraso
+
+            if (malClima) {
+                retrasoBase += 30; // Añadir 30 minutos por mal clima
+            }
+
+            if (cancelado) {
+                System.out.println("Estado: Cancelado");
+            } else if (retrasoBase > 15) {
+                System.out.println("Estado: Retrasado (" + retrasoBase + " min)");
+            } else {
+                System.out.println(" Estado: A tiempo");
+            }
+        }
     }
+
+        
+
+    
 
     public static void ejercicio6() {
       
