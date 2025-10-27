@@ -163,8 +163,42 @@ public class Main {
     }
 
     public static void ejercicio6() {
-        System.out.println("Ejercicio 6");
+      
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(" Ejercicio 6: Optimizador de Rutas de Entrega");
+        System.out.println("Área de Aplicación: Logística/Distribución\n");
+
+        final int TIEMPO_MAXIMO = 480; // 8 horas en minutos
+
+        System.out.print("Número de entregas en zona centro: ");
+        int centro = scanner.nextInt();
+
+        System.out.print("Número de entregas en zona periferia: ");
+        int periferia = scanner.nextInt();
+
+        System.out.print("Número de entregas en zona rural: ");
+        int rural = scanner.nextInt();
+
+        // Calcular tiempo total
+        int tiempoCentro = centro * 30;
+        int tiempoPeriferia = periferia * 45;
+        int tiempoRural = rural * 60;
+
+        int tiempoTotal = tiempoCentro + tiempoPeriferia + tiempoRural;
+
+        System.out.println("\nTiempo total estimado: " + tiempoTotal + " minutos");
+
+        if (tiempoTotal <= TIEMPO_MAXIMO) {
+            int totalEntregas = centro + periferia + rural;
+            System.out.println("Entregas posibles: " + totalEntregas);
+        } else {
+            System.out.println(" El tiempo excede el límite de 8 horas. Reorganiza las entregas.");
+        }
+
+
     }
+
 
     public static void ejercicio7() {
 
